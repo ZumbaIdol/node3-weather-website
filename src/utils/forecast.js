@@ -9,7 +9,8 @@ const forecast = (latitude, longitude, callback) => {
     } else if (body.error) {
       callback('Incapaz de encontrar la locación...', undefined)
     } else {
-      callback(undefined, body.daily.data[0].summary + ' La temperatura actual es ' + body.currently.temperature + ' grados. Hay un ' + body.currently.precipProbability + ' % posibilidad de precipitación. La temperatura alta es ' + body.daily.data[0].apparentTemperatureHigh + ' y la temperatura baja es ' + body.daily.data[0].apparentTemperatureLow + '.')
+      console.log(body.daily.data[0])
+      callback(undefined, body.daily.data[0].summary + ' La temperatura actual es ' + body.currently.temperature + ' grados. Hay un ' + body.currently.precipProbability + ' % posibilidad de precipitación. La temperatura alta es ' + body.daily.data[0].temperatureHigh + ' y la temperatura baja es ' + body.daily.data[0].temperatureLow + '.')
     }
   })
 }
